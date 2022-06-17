@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(196, 3, 196);
+        }
+        .main{
+            display: flex;
+            flex-wrap: wrap;
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        button{
+            font-size: 100px;
+            font-weight: bold;
+            margin: 5px;
+            width: 150px;
+            height: 150px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 1px 1px 15px rgb(74, 0, 74);
+            background-color: plum;
+        }
+        h1{
+            position: absolute;
+            font-size: 200px;
+            text-align: center;
+            width: 100%;
+            color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="win"></h1>
+    <div class="main">
+        <button id="button_a" onclick="change(num[0])"></button>
+        <button id="button_b" onclick="change(num[1])"></button>
+        <button id="button_c" onclick="change(num[2])"></button>
+        <button id="button_d" onclick="change(num[3])"></button>
+        <button id="button_e" onclick="change(num[4])"></button>
+        <button id="button_f" onclick="change(num[5])"></button>
+        <button id="button_g" onclick="change(num[6])"></button>
+        <button id="button_h" onclick="change(num[7])"></button>
+        <button id="button_i" onclick="change(num[8])"></button>
+    </div>
+
+
+    <script>
+
+        let n = 0
+        let num = ["a","b","c","d","e","f","g","h","i"]
+        function change(but){
+            let place = document.getElementById(`button_${but}`).innerHTML
+            if(place == ""){
+                if(n%2==0){
+                    document.getElementById(`button_${but}`).innerHTML ="O"
+                    document.getElementById(`button_${but}`).style.color = "blueviolet"
+                }else{
+                    document.getElementById(`button_${but}`).innerHTML ="X"
+                    document.getElementById(`button_${but}`).style.color = "hotpink"
+                }
+                n++
+            }
+            if(document.getElementById(`button_a`).innerHTML==document.getElementById(`button_b`).innerHTML && document.getElementById(`button_b`).innerHTML==document.getElementById(`button_c`).innerHTML){
+                if(document.getElementById(`button_a`).innerHTML == document.getElementById(`button_${but}`).innerHTML){
+                    if(n%2==0){document.getElementById(`win`).innerHTML=`Player Two Win`
+                    }else{document.getElementById(`win`).innerHTML=`Player One Win`}
+                }
+                
+            }
+            if(document.getElementById(`button_d`).innerHTML==document.getElementById(`button_e`).innerHTML && document.getElementById(`button_e`).innerHTML==document.getElementById(`button_f`).innerHTML){
+                if(document.getElementById(`button_e`).innerHTML == document.getElementById(`button_${but}`).innerHTML){
+                    if(n%2==0){document.getElementById(`win`).innerHTML=`Player Two Win`
+                    }else{document.getElementById(`win`).innerHTML=`Player One Win`}
+                }
+                
+            }
+            if(document.getElementById(`button_g`).innerHTML==document.getElementById(`button_h`).innerHTML && document.getElementById(`button_h`).innerHTML==document.getElementById(`button_i`).innerHTML){
+                if(document.getElementById(`button_h`).innerHTML == document.getElementById(`button_${but}`).innerHTML){
+                    if(n%2==0){document.getElementById(`win`).innerHTML=`Player Two Win`
+                    }else{document.getElementById(`win`).innerHTML=`Player One Win`}
+                }
+                
+            }
+            if(document.getElementById(`button_a`).innerHTML==document.getElementById(`button_e`).innerHTML && document.getElementById(`button_e`).innerHTML==document.getElementById(`button_i`).innerHTML){
+                if(document.getElementById(`button_e`).innerHTML == document.getElementById(`button_${but}`).innerHTML){
+                    if(n%2==0){document.getElementById(`win`).innerHTML=`Player Twp Win`
+                    }else{document.getElementById(`win`).innerHTML=`Player One win`}
+                }
+                
+            }
+            if(document.getElementById(`button_c`).innerHTML==document.getElementById(`button_e`).innerHTML && document.getElementById(`button_e`).innerHTML==document.getElementById(`button_g`).innerHTML){
+                if(document.getElementById(`button_c`).innerHTML == document.getElementById(`button_${but}`).innerHTML){
+                    if(n%2==0){document.getElementById(`win`).innerHTML=`Player Two Win`
+                    }else{document.getElementById(`win`).innerHTML=`Player One Win`}
+                }
+                
+            }
+            if(document.getElementById(`button_a`).innerHTML==document.getElementById(`button_d`).innerHTML && document.getElementById(`button_d`).innerHTML==document.getElementById(`button_g`).innerHTML){
+                if(document.getElementById(`button_a`).innerHTML == document.getElementById(`button_${but}`).innerHTML){
+                    if(n%2==0){document.getElementById(`win`).innerHTML=`Player Two Win`
+                    }else{document.getElementById(`win`).innerHTML=`Player One Win`}
+                }
+                
+            }
+            if(document.getElementById(`button_b`).innerHTML==document.getElementById(`button_e`).innerHTML && document.getElementById(`button_e`).innerHTML==document.getElementById(`button_h`).innerHTML){
+                if(document.getElementById(`button_e`).innerHTML == document.getElementById(`button_${but}`).innerHTML){
+                    if(n%2==0){document.getElementById(`win`).innerHTML=`Player Two Win`
+                    }else{document.getElementById(`win`).innerHTML=`Player One Win`}
+                }
+                
+            }
+            if(document.getElementById(`button_c`).innerHTML==document.getElementById(`button_g`).innerHTML && document.getElementById(`button_`).innerHTML==document.getElementById(`button_i`).innerHTML){
+                if(document.getElementById(`button_h`).innerHTML == document.getElementById(`button_${but}`).innerHTML){
+                    if(n%2==0){document.getElementById(`win`).innerHTML=`Player Two Win`
+                    }else{document.getElementById(`win`).innerHTML=`Player One Win`}
+                }
+                
+            }
+        }
+
+    </script>
+</body>
+</html>
